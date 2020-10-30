@@ -9,7 +9,7 @@ config.close()
 
 @client.on(events.InlineQuery)
 async def querylist(event):
-    if len(event.text) > 2:
+    if event.text:
         await event.answer([event.builder.article(f'{event.text[:25]}... ¯\_(ツ)_/¯', text=f'{event.text} ¯\_(ツ)_/¯'),
                             event.builder.article(f'¯\_(ツ)_/¯ {event.text[:25]}...', text=f'¯\_(ツ)_/¯ {event.text}')])
 
